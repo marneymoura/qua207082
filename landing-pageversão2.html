@@ -29,29 +29,30 @@
             margin: 0px 2px;
         }
 
-        #pricipal {
-            
+        #principal {
+
             display: flex;
         }
-        #principal div{
+
+        #principal div {
             width: 50%;
-            margin:30px;
+            margin: 30px;
             text-align: left;
         }
 
 
-        #pricipal h2 {
+        #principal h2 {
             font-size: 150%;
         }
 
-        #pricipal p {
-             margin-top: 20px;
-             font-size: 90%;
-        
-        
+        #principal p {
+            margin-top: 20px;
+            font-size: 90%;
+
+
         }
 
-        #pricipal button {
+        #principal button {
             padding: 15px;
             margin: 30px 0px;
             width: 300px;
@@ -59,61 +60,53 @@
             border: 2px solid black;
             font-weight: bold;
         }
-        #principal iframe{
+
+        #principal iframe {
             width: 100%;
             height: 100%;
         }
 
-        #lista {
+        #carrossel {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+
         }
 
-
-
-        #lista .caixa {
-            background-color: gray;
+        #carrossel div {
+            height: 130px;
             width: 200px;
-            margin: 20px;
-            text-align: center;
-            padding: 20px;
-            border-radius: 5px;
-
-
-        }
-
-        .caixa h3 {
-            padding-bottom: 10px;
-        }
-
-        #depoimentos {
-            text-align: center;
             background-color: gray;
-            padding: 10px;
+            margin: 10px;
 
         }
 
-        #depoimentos {
-            padding: 10px;
-        }
-
-        footer {
-            background-color: black;
-            color: white;
-            text-align: end;
-        }
-
-        body {
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        #conteiner {
+        #noticias {
             display: flex;
-            height: 100vh;
-            flex-direction: column;
+            flex-wrap: wrap;
             justify-content: space-between;
+        }
+
+        .noticia {
+            width: 300px;
+            margin:30px;
+        }
+        .noticia div{
+            border: 2px solid black;
+            border-radius: 100%;
+            float: left;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 10px;
+        }
+        .noticia h3{
+            font-size: xx-large;
+
+        }
+        .noticia p{
+            margin-top: 5px;
         }
     </style>
 
@@ -121,55 +114,76 @@
 
 <body>
 
-    <div id="conteiner">
-        <div id="grupo01">
-            <header>
-                <h1>Logo</h1>
-                <nav>
-                    <a href="#">A</a>
-                    <a href="#">B</a>
-                    <a href="#">C</a>
-                </nav>
-            </header>
-            <section id="principal">
-                <div>
-                    <h2>What is Lorem Ipsum?</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s </p>
-                    <button>CTA Button</button>
-                </div>
-                <div>
-                <iframe  src="https://www.youtube.com/embed/tNobiwuAaAg?si=hAC8XBpZkMaWBvhs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            </section>
-            <section id="lista">
-                <div class="caixa">
-                    <h3>Rápido</h3>
-                    <p>Obtenha resultados em tempo recorde com nossa solução</p>
-                </div>
-                <div class="caixa">
-                    <h3>Simples</h3>
-                    <p>Interface amigavel para todos os níveis de experiência.</p>
-
-                </div>
-                <div class="caixa">
-                    <h3>Seguro</h3>
-                    <p>Seus dados estão protegidos com criptografia de ponta.</p>
-                </div>
-
-            </section>
-
+    <header>
+        <h1>Logo</h1>
+        <nav>
+            <a href="#">A</a>
+            <a href="#">B</a>
+            <a href="#">C</a>
+        </nav>
+    </header>
+    <section id="principal">
+        <div>
+            <h2>What is Lorem Ipsum?</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s </p>
+            <button>CTA Button</button>
         </div>
-        <div id="grupo02">
+        <div>
+            <iframe src="https://www.youtube.com/embed/tNobiwuAaAg?si=hAC8XBpZkMaWBvhs" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-            <section id="depoimentos">
-                <h2>O que nossos clientes dizem</h2>
-                <p>"mudou completamente minha forma de trabalhar.Recomendo!"</p>
-                <p>"Excelente atendimento e resultados incríveis!"</p>
-            </section>
-            <footer>
-                &copy; 2025 MinhaMarca - Todos os direitos reservados.
-            </footer>
+    </section>
+    <section id="carrossel">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </section>
+    <section id="noticias">
+
+        <div class="noticia">
+            <div>1</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Ipsum is simplydummy text of the printing and type</p>
         </div>
+        <div class="noticia">
+            <div>2</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Ipsum is simplydummy text of the printing and type </p>
+        </div>
+        <div class="noticia">
+            <div>3</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Ipsum is simplydummy text of the printing and type </p>
+        </div>
+        <div class="noticia">
+            <div>4</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Ipsum is simplydummy text of the printing and type </p>
+        </div>
+        <div class="noticia">
+            <div>5</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Ipsum is simplydummy text of the printing and type </p>
+        </div>
+        <div class="noticia">
+            <div>6</div>
+            <h3>Lorem Ipsum</h3>
+            <p>Ipsum is simplydummy text of the printing and type </p>
+        </div>
+
+    </section>
+
+    </div>
+
+    </div>
 
     </div>
 
