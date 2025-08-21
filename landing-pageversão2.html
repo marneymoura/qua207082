@@ -72,9 +72,23 @@
 
         }
 
-        #carrossel div {
+        #container {
+            width: 880px;
+            overflow: hidden;
+        }
+
+        #carrossel-container {
+            width: 100%;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            
+        }
+
+
+
+        #carrossel-container div {
             height: 130px;
-            width: 200px;
+            min-width: 200px;
             background-color: gray;
             margin: 10px;
 
@@ -86,11 +100,22 @@
             justify-content: space-between;
         }
 
-        .noticia {
-            width: 300px;
-            margin:30px;
+        #bt-left,
+        #bt-right {
+            font-size: 300%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+
         }
-        .noticia div{
+
+        .noticia {
+            width: 270px;
+            margin: 30px;
+        }
+
+        .noticia div {
             border: 2px solid black;
             border-radius: 100%;
             float: left;
@@ -101,14 +126,58 @@
             align-items: center;
             margin-right: 10px;
         }
-        .noticia h3{
+
+        .noticia h3 {
             font-size: xx-large;
 
         }
-        .noticia p{
+
+        .noticia p {
             margin-top: 5px;
         }
+
+        #depoimentos {
+            display: flex;
+        }
+
+        .depoimento {
+            padding: 30px;
+        }
+
+        .depoimento.foto {
+            background-color: gray;
+            width: 150px;
+            height: 150px;
+            float: left;
+            margin-right: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: gray;
+            color: white;
+        }
+
+        body {
+            width: 1000px;
+            margin: auto;
+            border: 2px solid gray;
+            background-color: white;
+        }
+
+        html {
+            background-color: #dedede;
+
+        }
+
+        hr {
+            border: 1px solid gray;
+            width: 80%;
+            margin: auto;
+        }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
 
 </head>
 
@@ -118,9 +187,12 @@
     <header>
         <h1>Logo</h1>
         <nav>
-            <a href="#">A</a>
-            <a href="#">B</a>
-            <a href="#">C</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-github"></i></a>
+
         </nav>
     </header>
     <section id="principal">
@@ -139,13 +211,27 @@
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
     </section>
+    <hr>
     <section id="carrossel">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div id="bt-left" onclick="carrossel(-1)">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        <div id="container">
+            <div id="carrossel-container">
+                <div class="img">1</div>
+                <div class="img">2</div>
+                <div class="img">3</div>
+                <div class="img">4</div>
+                <div class="img">5</div>
+                <div class="img">6</div>
+            </div>
+        </div>
+        <div id="bt-right" onclick="carrossel(1)">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
 
     </section>
+    <hr>
     <section id="noticias">
 
         <div class="noticia">
@@ -180,12 +266,29 @@
         </div>
 
     </section>
+    <section id="depoimentos">
+        <div class="depoimento">
+            <div class="foto"></div>
+            <p>Ipsum is simplydummy text of the printing and type </p>
 
-    </div>
+        </div>
 
-    </div>
+    </section>
+    <footer>
+        alguma coisa escrita aqui que não consegui ler.
+    </footer>
+    <script>
+        const imgs = document.getElementById("carrossel-container");
+        const img = document.querySelectorAll("#carrossel-container div");
+        let idx = 0;
+        function carrossel(i) {
+            idx += i;
+            if (idx < 0) idx = 0;
+            if (idx >= img.length - 4) idx = img.length - 4;
+            imgs.style.transform = `translateX(${-idx * 220}px)`;
+        }
+    </script>
 
-    </div>
 
 </body>
 
